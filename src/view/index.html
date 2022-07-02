@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Home</title>
+</head>
+<body>
+    <br>
+    <div class="titles d-flex flex-column align-items-center mb-2">
+        <h1>Projeto de API Compass</h1>  <hr>
+        <p>Esta aplicação permite cadastrar, consultar, editar e deletar <i>users</i> e <i>tasks</i> a partir de uma API conectada ao banco de dados NoSQL MongoDB. <br><br>A API foi desenvolvida utilizando as linguagens typescript/javascript e as dependências fetch, mongoose e express.</p>
+        <br>
+        <h4>Escolha uma das páginas abaixo</h4>
+    </div>
+    <br>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div>
+            <button class="btn btn-primary" onclick="window.open('./userCreate.html')">Create User</button>
+            <button class="btn btn-info" onclick="window.open('./userEdit.html')">Edit User</button>
+            <button class="btn btn-dark" onclick="window.open('./userConsult.html')">Consult Users</button>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-primary" onclick="window.open('./taskCreate.html')">Create Task</button>
+            <button class="btn btn-info" onclick="window.open('./taskEdit.html')">Edit Task</button>
+            <button class="btn btn-dark" onclick="window.open('./taskConsult.html')">Consult Tasks</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
+</body>
+</html>

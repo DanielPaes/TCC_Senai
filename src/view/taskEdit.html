@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Edit Task</title>
+</head>
+<body>
+    <header>
+        <h1 class="p-2">Edit Task</h1>
+        <hr>
+    </header>
+    <form>
+        <div class="row mb-3">
+            <div class="col w-50">
+                <label for="address" class="form-label">Task ID for edition:</label>
+                <input type="text" class="form-control" id="input-taskid" name="address" placeholder="ID">
+            </div>
+            <div class="col w-25">
+                <button class="btn btn-success mt-4" value="Register" id="button-get-taskid">Task ID</button>
+            </div>           
+        </div>
+        <br><hr><br>
+        <div class="personal mb-3 container-fluid">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="description" class="form-label">Description:</label>
+                    <input type="text" class="form-control" id="input-description" name="description" placeholder="João Silva">
+                </div>
+               
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="date" class="form-label">Date:</label>
+                    <input type="text" class="form-control" id="input-date" name="date" placeholder="YYYY-MM-DD HH:MM">
+                </div>
+                <div class="col">
+                    <label for="userid" class="form-label">User ID</label>
+                    <input type="text" class="form-control" id="input-userid" name="userid">
+                </div>
+            </div>
+
+
+        <div class="col">
+            <br> <hr> <br>
+            <button class="btn btn-success position-absolute start-50 translate-middle mt-3" value="Register" id="button-edittask">Confirm Edit</button> <br> <br> <br>
+            <button class="btn btn-success position-absolute start-50 translate-middle mt-3" value="Register" id="button-delete-task">Delete Task</button> <br> <br> 
+        </div> 
+
+        <div class="submit position-relative">
+            <br>
+            <button class="btn btn-success position-absolute start-50 translate-middle mt-3" value="Register" id="clean-task">Clean fields</button>
+            <br> <br>
+        </div>
+
+    </form>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script  src="../controllers/viewTasksController.js"></script>
+</body>
+</html>
