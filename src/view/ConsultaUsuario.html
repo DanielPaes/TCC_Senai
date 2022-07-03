@@ -9,27 +9,28 @@
 </head>
 <body>
     <header>
-        <h1 class="p-2">Consult User</h1>
+        <h1 class="p-2">Consulta Usuário</h1>
         <hr>
     </header>
-    <form>        
+    <form>   
+        
+        <div class="submit position-relative">
+            <br><button class="btn btn-success position-absolute start-50 translate-middle mt-2" value="Register" id="button-get-all">Consultar todos os Usuários</button><br><br><hr><br>
+        </div>
         <div class="row mb-3">
             <div class="col w-50">
-                <label for="address" class="form-label">Consult User by ID</label>
-                <input type="text" class="form-control" id="input-id-edit" name="address" placeholder="ID">
+                <label for="address" class="form-label">Consulta usuário por CPF</label>
+                <input type="text" class="form-control" id="input-id-edit" name="address" placeholder="CPF">
             </div>
             <div class="col w-25">
-                <button class="btn btn-success mt-4" value="Register" id="edit-search">Consult by ID</button>
+                <button class="btn btn-success mt-4" value="Register" id="edit-search">Consultar Usuário</button>
             </div>           
         </div>
-        <div class="submit position-relative">
-            <br><hr><br>
-            <button class="btn btn-success position-absolute start-50 translate-middle mt-2" value="Register" id="button-get-all">Consult All Users</button><br><br><hr><br>
-        </div>
+       
         <div class="personal mb-3 container-fluid">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="name" class="form-label">Name:</label>
+                    <label for="name" class="form-label">Nome:</label>
                     <input type="text" class="form-control" id="input-name" name="name" placeholder="João Silva">
                 </div>
                 <div class="col">
@@ -37,7 +38,7 @@
                     <input type="text" class="form-control" id="input-cpf" name="cpf" placeholder="908.415.400-20">
                 </div>
                 <div class="col">
-                    <label for="birthDate" class="form-label">Birth Date:</label>
+                    <label for="birthDate" class="form-label">Data de Nascimento:</label>
                     <input type="text" class="form-control" id="input-birthdate" name="birthDate" placeholder="YYYY-MM-DD">
                 </div>
             </div>
@@ -47,7 +48,7 @@
                     <input type="email" class="form-control" id="input-email" name="email" placeholder="joao.silva@compasso">
                 </div>
                 <div class="col">
-                    <label for="password" class="form-label">Password:</label>
+                    <label for="password" class="form-label">Telefone:</label>
                     <input type="name" class="form-control" id="input-password" name="password">
                 </div>
             </div>
@@ -57,40 +58,48 @@
         <div class="address mb-3 mt-3 container-fluid">
             <div class="row mb-3">
                 <div class="col w-50">
-                    <label for="address" class="form-label">Address:</label>
+                    <label for="address" class="form-label">Endereço:</label>
                     <input type="text" class="form-control" id="input-address" name="address" placeholder="Street A">
                 </div>
                 <div class="col w-25">
-                    <label for="number" class="form-label">Number:</label>
+                    <label for="number" class="form-label">Número:</label>
                     <input type="text" class="form-control" id="input-number" name="number" placeholder="A25">
                 </div>
                 <div class="col w-25">
-                    <label for="complement" class="form-label">Complement:</label>
+                    <label for="complement" class="form-label">CEP:</label>
                     <input type="text" class="form-control" id="input-complement" name="complement" placeholder="House">
                 </div> 
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="city" class="form-label">City:</label>
+                    <label for="city" class="form-label">Cidade:</label>
                     <input type="text" class="form-control" id="input-city" name="city" placeholder="São Paulo">
                 </div>
                 <div class="col">
-                    <label for="state" class="form-label">State:</label>
+                    <label for="state" class="form-label">Estado:</label>
                     <input type="text" class="form-control" id="input-state" name="state" placeholder="SP">                    
                 </div>
+                
                 <div class="col">
-                    <label for="country" class="form-label">Country:</label>
-                    <input type="text" class="form-control" id="input-country" name="country" placeholder="Brasil">
-                </div>
-                <div class="col">
-                    <label for="zipCode" class="form-label">Zip Code:</label>
+                    <label for="zipCode" class="form-label">Status do cartão:</label>
                     <input type="text" class="form-control" id="input-zipcode" name="zipCode" placeholder="93950-000">
                 </div>
             </div>
         </div>
         <div class="submit position-relative">
             <br> <hr>
-            <button class="btn btn-success position-absolute start-50 translate-middle mt-3" value="Register" id="user-clean">Clean fields</button>
+            <label for="zipCode" class="form-label">ID do usuário:</label>
+                    <input type="text" class="form-control" id="input-zipcode" name="" >
+        </div>
+
+        <div class="btn-editar-usuario">
+            <br> <hr>
+            <button class="btn btn-success mt-3" value="Register" id="user-clean">Clean fields</button>
+            <button class="btn btn-success mt-3" value="Register" id="user-clean">Clean fields</button> <br>
+            <br> <hr>
+            <label for="zipCode" class="form-label">ID do usuário:</label>
+                    <input type="text" class="form-control" id="input-zipcode" name="" >
+            <button class="btn btn-success mt-3" value="Register" id="user-clean">Clean fields</button>
             <br> <br>
         </div>
     </form>

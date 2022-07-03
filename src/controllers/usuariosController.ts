@@ -73,10 +73,11 @@ class UsuariosController{
         const id = req.params.id;
         users.findByIdAndDelete(id, (err:any) => {
             if(!err){
+                res.status(204);
+                res.send({message: 'User successfully deleted'});
                 
-                res.status(204).send({message: 'User successfully deleted'});
             } else {
-                res.status(404).send({message: err.message});
+                res.sendStatus(404).send({message: err.message});
             }
         })
     }

@@ -13,6 +13,7 @@ const pacienteSchema = new mongoose.Schema(
         endereco: {type: String, required: true},
         numero: {type: String, required: false},
         crm_medico: {type: String, required: true},
+        anotacoes: {type: String, required: false},
         isolamento: {type: Boolean, required: false},
         data_inicio: {type: Date, required: false},
         data_fim: {type: Date, required: false},

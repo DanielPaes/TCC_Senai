@@ -91,10 +91,9 @@ static getPacienteById = (req: Request, res: Response) => {
         const id = req.params.id;
         tasks.findByIdAndDelete(id, (err:any) => {
             if(!err){
-                res.status(204).send({message: 'Task successfully deleted'});
+                res.send({message: 'Task successfully deleted'});
             } else {
                 res.status(404).send({message: err.message});
-                
             }
         })
     }
