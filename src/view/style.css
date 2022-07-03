@@ -4,6 +4,22 @@ body{
     text-align: justify;
 }
 
+#botoes-cadastrar-usuario, #botoes-editar-usuario{
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+
+#botoes-cadastrar-usuario, #botoes-editar-usuario button{
+    margin: auto;
+}
+
+#botoes-editar-usuario button{
+    margin-left: 200px;
+}
+
+
 
 
 

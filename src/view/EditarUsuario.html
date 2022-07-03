@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Editar Usuário</title>
+</head>
+<body>
+    <header>
+        <h1 class="p-2">Editar Usuário</h1>
+        <hr>
+    </header>
+    <form>   
+        
+        <div class="submit position-relative">
+            <br><button class="btn btn-success position-absolute start-50 translate-middle mt-2" value="Register" id="button-get-all">Consultar todos os Usuários</button><br><br><hr><br>
+        </div>
+        <div class="row mb-3">
+            <div class="col w-50">
+                <label for="address" class="form-label">Consulta usuário por CPF</label>
+                <input type="text" class="form-control" id="usuario-consultar-cpf" name="address" placeholder="CPF">
+            </div>
+            <div class="col w-25">
+                <button class="btn btn-success mt-4" value="Register" id="edit-search">Consultar Usuário</button>
+            </div>           
+        </div>
+       
+        <div class="personal mb-3 container-fluid">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="name" class="form-label">Nome:</label>
+                    <input type="text" class="form-control" id="input-name" name="name" placeholder="João Silva">
+                </div>
+                <div class="col">
+                    <label for="cpf" class="form-label">CPF:</label>
+                    <input type="text" class="form-control" id="input-cpf" name="cpf" placeholder="908.415.400-20">
+                </div>
+                <div class="col">
+                    <label for="birthDate" class="form-label">Data de Nascimento:</label>
+                    <input type="text" class="form-control" id="input-birthdate" name="birthDate" placeholder="YYYY-MM-DD">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="input-email" name="email" placeholder="joao.silva@compasso">
+                </div>
+                <div class="col">
+                    <label for="password" class="form-label">Telefone:</label>
+                    <input type="name" class="form-control" id="input-password" name="password">
+                </div>
+            </div>
+            <div class="row mb-3">                
+            </div>
+        </div>
+        <div class="address mb-3 mt-3 container-fluid">
+            <div class="row mb-3">
+                <div class="col w-50">
+                    <label for="address" class="form-label">Endereço:</label>
+                    <input type="text" class="form-control" id="input-address" name="address" placeholder="Street A">
+                </div>
+                <div class="col w-25">
+                    <label for="number" class="form-label">Número:</label>
+                    <input type="text" class="form-control" id="input-number" name="number" placeholder="A25">
+                </div>
+                <div class="col w-25">
+                    <label for="complement" class="form-label">CEP:</label>
+                    <input type="text" class="form-control" id="input-complement" name="complement" placeholder="House">
+                </div> 
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="city" class="form-label">Cidade:</label>
+                    <input type="text" class="form-control" id="input-city" name="city" placeholder="São Paulo">
+                </div>
+                <div class="col">
+                    <label for="state" class="form-label">Estado:</label>
+                    <input type="text" class="form-control" id="input-state" name="state" placeholder="SP">                    
+                </div>
+                
+                <div class="col">
+                    <label for="zipCode" class="form-label">Status do cartão:</label>
+                    <input type="text" class="form-control" id="input-zipcode" name="zipCode" placeholder="93950-000">
+                </div>
+            </div>
+        </div>
+        <div class="submit position-relative">
+            <br> <hr>
+            <label for="zipCode" class="form-label">ID do usuário:</label>
+                    <input type="text" class="form-control" id="input-zipcode" name="" >
+        </div>
+
+        <div id="botoes-editar-usuario">
+            <br> <hr>
+            <button class="btn btn-success mt-3" value="Register" id="usuario-apagar-campos">Limpar Campos</button>
+            <button class="btn btn-success mt-3" value="Register" id="usuario-editar">Salvar Modificações</button>
+            <button class="btn btn-success mt-3" value="Register" id="usuario-deletar">Deletar Usuario</button> <br>
+            <br> <hr>
+          
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script  src="../controllers/viewUsersController.js"></script>
+</body>
+</html>

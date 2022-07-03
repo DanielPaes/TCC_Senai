@@ -5,28 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Consult User</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Cadastrar Paciente</title>
 </head>
 <body>
     <header>
-        <h1 class="p-2">Consulta Usuário</h1>
+        <h1 class="p-2">Cadastrar Paciente</h1>
         <hr>
     </header>
     <form>   
-        
-        <div class="submit position-relative">
-            <br><button class="btn btn-success position-absolute start-50 translate-middle mt-2" value="Register" id="button-get-all">Consultar todos os Usuários</button><br><br><hr><br>
-        </div>
-        <div class="row mb-3">
-            <div class="col w-50">
-                <label for="address" class="form-label">Consulta usuário por CPF</label>
-                <input type="text" class="form-control" id="input-id-edit" name="address" placeholder="CPF">
-            </div>
-            <div class="col w-25">
-                <button class="btn btn-success mt-4" value="Register" id="edit-search">Consultar Usuário</button>
-            </div>           
-        </div>
-       
+           
         <div class="personal mb-3 container-fluid">
             <div class="row mb-3">
                 <div class="col">
@@ -80,27 +68,16 @@
                     <input type="text" class="form-control" id="input-state" name="state" placeholder="SP">                    
                 </div>
                 
-                <div class="col">
-                    <label for="zipCode" class="form-label">Status do cartão:</label>
-                    <input type="text" class="form-control" id="input-zipcode" name="zipCode" placeholder="93950-000">
-                </div>
             </div>
         </div>
-        <div class="submit position-relative">
-            <br> <hr>
-            <label for="zipCode" class="form-label">ID do usuário:</label>
-                    <input type="text" class="form-control" id="input-zipcode" name="" >
-        </div>
 
-        <div class="btn-editar-usuario">
-            <br> <hr>
-            <button class="btn btn-success mt-3" value="Register" id="user-clean">Clean fields</button>
-            <button class="btn btn-success mt-3" value="Register" id="user-clean">Clean fields</button> <br>
-            <br> <hr>
-            <label for="zipCode" class="form-label">ID do usuário:</label>
-                    <input type="text" class="form-control" id="input-zipcode" name="" >
-            <button class="btn btn-success mt-3" value="Register" id="user-clean">Clean fields</button>
-            <br> <br>
+        <br> <hr>
+
+        <div id="botoes-cadastrar-usuario">
+            
+            <button class="btn btn-success mt-3" value="Register" id="user-clean">Limpar Campos</button>
+            <button class="btn btn-success mt-3" value="Register" id="user-clean">Cadastrar Paciente</button> <br>
+            
         </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
