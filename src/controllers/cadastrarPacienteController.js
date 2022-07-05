@@ -71,6 +71,9 @@ function validaCPF(strCPF) {
 }
 
 function validaEmail(email){
+    if(email.length == 0){
+        return true;
+    }
     let padraoEmail = /^[\w._-]+@[\w_.-]+\.[\w]/gi;
     let texto = email;
     return padraoEmail.test(texto);

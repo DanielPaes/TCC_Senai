@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>Editar Usuário</title>
+    <title>Editar Paciente</title>
 </head>
 <body>
     <header>
-        <h1 class="p-2">Editar Usuário</h1>
+        <h1 class="p-2">Editar Paciente</h1>
         <hr>
     </header>
     <form>   
         
         <div class="submit position-relative">
-            <br><button class="btn btn-success position-absolute start-50 translate-middle mt-2" value="consultar-usuarios" id="consultar-todos-usuarios">Consultar todos os Usuários</button><br><br><hr><br>
+            <br><button class="btn btn-success position-absolute start-50 translate-middle mt-2" value="consultar-usuarios" id="consultar-todos-usuarios">Consultar todos os Pacientes</button><br><br><hr><br>
         </div>
-        <div class="row mb-3 container-fluid">
+        <div class="row mb-3 container-fluid" >
             <div class="col w-50">
-                <label for="consultar-usuario" class="form-label">Consulta usuário por CPF</label>
+                <label for="consultar-usuario" class="form-label">Consulta paciente por CPF</label>
                 <input type="text" class="form-control" id="consultar-cpf" name="consultar-usuario" placeholder="CPF">
             </div>
             <div class="col w-25">
-                <button class="btn btn-success mt-4" value="Register" id="btn-consultar-usuario">Consultar Usuário</button>
+                <button class="btn btn-success mt-4" value="Register" id="btn-consultar-usuario">Consultar Paciente</button>
             </div>           
         </div>
        
@@ -42,6 +42,7 @@
                     <label for="birthDate" class="form-label">Data de Nascimento:</label>
                     <input type="text" class="form-control" id="usuario-nascimento" name="birthDate" placeholder="YYYY-MM-DD">
                 </div>
+
             </div>
             <div class="row mb-3">
                 <div class="col">
@@ -80,12 +81,6 @@
                     <label for="state" class="form-label">Estado:</label>
                     <input type="text" class="form-control" id="usuario-estado" name="state" placeholder="SP">                    
                 </div>
-                
-                <div class="col">
-                    <label for="status-cartao" class="form-label">Status do cartão:</label><br>
-                    <input type="radio" class="" name="status-cartao" value="true" id="usuario-cartao-ativo"> Ativo <br>
-                    <input type="radio" class="" name="status-cartao" value="false" id="usuario-cartao-inativo"> Inativo 
-                </div>
             </div>
         </div>
      
@@ -100,6 +95,6 @@
         </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script  src="../controllers/editarUsuarioController.js"></script>
+    <script  src="../controllers/editarPacienteController.js"></script>
 </body>
 </html>

@@ -12,9 +12,9 @@ let inputConsultarCpf = document.querySelector('#consultar-cpf');
 let inputNome = document.querySelector("#usuario-nome");
 let inputCpf = document.querySelector("#usuario-cpf");
 let inputNascimento = document.querySelector("#usuario-nascimento");
-let inputEmail = document.querySelector("#usuario-email");
 let inputTelefone = document.querySelector("#usuario-telefone");
 let inputEndereco = document.querySelector("#usuario-endereco");
+let inputEmail = document.querySelector("#usuario-email");
 let inputNumero = document.querySelector("#usuario-numero");
 let inputCep = document.querySelector("#usuario-cep");
 let inputCidade = document.querySelector("#usuario-cidade");
@@ -22,14 +22,6 @@ let inputEstado = document.querySelector("#usuario-estado");
 let inputCartaoAtivo = document.querySelector("#usuario-cartao-ativo");
 
 // Functions and validations
-
-function verificaCartao(){
-    if(inputCartaoAtivo.checked){
-        return true;
-    } else {
-        return false;
-    }
-}
 
 function fillObject(){
     let _dataEdit = {
@@ -41,8 +33,7 @@ function fillObject(){
         estado: inputEstado.value,
         cep: inputCep.value,
         endereco: inputEndereco.value,
-        numero: inputNumero.value,
-        cartao_ativo: verificaCartao()
+        numero: inputNumero.value
     }
     return _dataEdit;
 }
@@ -78,9 +69,6 @@ function validaCPF(strCPF) {
 }
 
 function validaEmail(email){
-    if(email.length == 0){
-        return true;
-    }
     let padraoEmail = /^[\w._-]+@[\w_.-]+\.[\w]/gi;
     let texto = email;
     return padraoEmail.test(texto);
@@ -89,13 +77,10 @@ function validaEmail(email){
 function messageErrorValidation(){
   
     if(!validaNome(inputNome.value)){
-        console.log("Invalid name.");
+        console.log("Nome inválido.");
     }
     if(!validaCPF(inputCpf.value.replaceAll(/[.-]/g, ''))){
-        console.log("Invalid cpf.");
-    }
-    if(!validaEmail(inputEmail.value)){
-        console.log("Invalid email.");
+        console.log("CPF inválido.");
     }
 }
 
@@ -103,11 +88,11 @@ function messageErrorValidation(){
 
 btnConsultarTodosUsuarios?.addEventListener('click', function(event){
     event.preventDefault();
-    fetch('http://localhost:3000/usuarios/')
+    fetch('http://localhost:3000/pacientes/')
         .then((data) => data.json())
         .then((post) => {
             console.log(post);
-            window.open("http://localhost:3000/usuarios?page=1&limit=3");
+            window.open("http://localhost:3000/pacientes?page=1&limit=3");
         })
 })
 
@@ -118,9 +103,12 @@ btnLimparCampos.addEventListener('click', function(){
 btnDeletar?.addEventListener('click', async function(event){
     event.preventDefault();
     try{
-        console.log(inputId.value)
-        await fetch(`http://localhost:3000/usuarios/${inputId}`, {method: 'DELETE'})
-        .then((data) => {console.log(data), console.log(alert((data['status'] === 204) ? 'Usuário deletado.' : 'User not deleted.' ))})
+        console.log(inputId)
+
+        console.log(`http://localhost:3000/pacientes/${inputId}`);
+        let id = inputId.value;
+        await fetch(`http://localhost:3000/pacientes/${inputId}`, {method: 'DELETE'})
+        .then((data) => {console.log(data), console.log(alert('Usuário deletado.'))})
         //.then(() => cleanObject())
         .then(() => window.location.reload());        
     } catch(err){
@@ -131,16 +119,15 @@ btnDeletar?.addEventListener('click', async function(event){
 btnConsultarUsuarioCpf?.addEventListener('click', async function(event){
     event.preventDefault();
     try{
-        await fetch(`http://localhost:3000/usuarios/${inputConsultarCpf.value}`)
+        await fetch(`http://localhost:3000/pacientes/${inputConsultarCpf.value}`)
             .then((data) => data.json())
             .then((post) => {
-                console.log(post)
                 inputNome.value = post[0].nome;
                 inputCpf.value = post[0].id_cpf;
-                inputNascimento.value = post[0].nascimento;
-                inputEmail.value = post[0].email;
+                inputNascimento.value = post[0].nascimento.split('T')[0];
                 inputCidade.value = post[0].cidade;
                 inputTelefone.value = post[0].telefone;
+                inputEmail.value = post[0].email;
                 inputEstado.value = post[0].estado;
                 inputCep.value = post[0].cep;
                 inputEndereco.value = post[0].endereco;
@@ -157,19 +144,19 @@ btnEditar?.addEventListener('click', async function(event){
     event.preventDefault();
     let cpf = inputCpf.value.replaceAll(/[.-]/g, '')
     if(validaNome(inputNome.value) 
-    && validaCPF(cpf) 
+    && validaCPF(cpf)
     && validaEmail(inputEmail.value)){
         try{
             let data = fillObject();
-            console.log(data, inputCpf.value);
-            await fetch(`http://localhost:3000/usuarios/${inputCpf.value}`, {
+            console.log(data);
+            await fetch(`http://localhost:3000/pacientes/${inputCpf.value}`, {
                 method: 'PUT', // Method itself
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8'
                 },
                 body: JSON.stringify(data) // We send data in JSON format
                 }).then(tes => tes.json())
-                    .then(data => console.log(data), alert('Usuário editado.'));
+                    .then(data => console.log(data), alert('Paciente editado.'));
         } catch(err){
             console.log(err.message)
         }
