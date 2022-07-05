@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const usuarioSchema = new mongoose.Schema(
     {
         id: {type: String},
-        id_cpf: {type: String, required: true},
+        id_cpf: {type: String, unique: true, required: true},
         nome: {type: String, required: true},
         nascimento: {type: Date, required: true},
         telefone: {type: String, required: false},

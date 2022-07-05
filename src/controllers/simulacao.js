@@ -1,15 +1,16 @@
+// Botao Validar
 let btnValidarCartao = document.querySelector('#btn-validar-cartao');
 
+// Input CPF
 let inputCpf = document.querySelector('#valida-cpf');
 
-let pacienteIsolamento = false; 
-let usuarioCartaoAtivo = false;
-
-let acessoLiberado = false;
-
-
+// Evento Botão
 btnValidarCartao?.addEventListener('click', async function(event){
     event.preventDefault();
+    let pacienteIsolamento = false; 
+    let usuarioCartaoAtivo = false;
+    let usuarioInexistente = false;
+
     try{
         await fetch(`http://localhost:3000/pacientes/${inputCpf.value}`)
             .then((data) => data.json())
@@ -17,9 +18,7 @@ btnValidarCartao?.addEventListener('click', async function(event){
                 pacienteIsolamento = post[0].isolamento;
         });
     } catch(err){
-        alert("User not found 1.");
-        console.log(inputCpf.value);
-        cleanObject();
+        console.log('Usuário não cadastrado no SUS.');
     }
 
     try{
@@ -28,17 +27,18 @@ btnValidarCartao?.addEventListener('click', async function(event){
             .then((post) => { 
                 usuarioCartaoAtivo = post[0].cartao_ativo});
     } catch(err){
-        alert("User not found. 2");
-        console.log(inputCpf.value);
+        alert("Usuário não cadastrado no sistema de transporte públic");
+        usuarioInexistente = true;
+    } finally{
+        console.log(pacienteIsolamento);
+        console.log(usuarioCartaoAtivo);
+
+        if(!usuarioInexistente){
+            if(!pacienteIsolamento && usuarioCartaoAtivo){
+                alert('Acesso liberado');
+            } else {
+                alert('Cartão bloqueado. Uma mensagem informando o motivo do bloqueio será enviada ao celular/e-mail do usuário.');
+            }
+        }
     }
-
-    console.log(pacienteIsolamento);
-    console.log(usuarioCartaoAtivo);
-
-    if(!pacienteIsolamento && usuarioCartaoAtivo){
-        alert('Acesso liberado');
-    } else {
-        alert('Cartão bloqueado');
-    }
-
-})
+});

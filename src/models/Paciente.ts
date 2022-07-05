@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const pacienteSchema = new mongoose.Schema(
     {
         id: {type: String},
-        id_cpf: {type: String, required: true},
+        id_cpf: {type: String, unique:true, index:true},
         nome: {type: String, required: true},
         nascimento: {type: Date, required: true},
         telefone: {type: String, required: false},
@@ -12,7 +12,7 @@ const pacienteSchema = new mongoose.Schema(
         cep: {type: String, required: true},
         endereco: {type: String, required: true},
         numero: {type: String, required: false},
-        crm_medico: {type: String, required: true},
+        crm_medico: {type: String, required: false},
         anotacoes: {type: String, required: false},
         isolamento: {type: Boolean, required: false},
         data_inicio: {type: Date, required: false},
